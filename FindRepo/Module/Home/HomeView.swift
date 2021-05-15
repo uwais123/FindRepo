@@ -9,8 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            ZStack {
+                ScrollView {
+                    ForEach(1..<10) { _ in
+                        HomeRow()
+                    }
+                }
+            }
+            .navigationTitle("FindRepo")
+            .navigationBarItems(trailing: NavigationLink(
+                destination: SearchView()) {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.black)
+            }.buttonStyle(PlainButtonStyle()))
+        }
     }
 }
 
