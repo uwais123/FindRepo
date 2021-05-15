@@ -11,7 +11,7 @@ import SwiftUI
 struct FindRepoApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(presenter: HomePresenter(homeProvider: Injection.init().provideInteractor()))
         }
     }
 }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @ObservedObject var presenter: HomePresenter
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -17,9 +20,8 @@ struct HomeView: View {
                     }
                 }
             }
-            .navigationTitle("FindRepo")
-            .navigationBarItems(trailing: NavigationLink(
-                destination: SearchView()) {
+            .navigationTitle("Find Repo")
+            .navigationBarItems(trailing: self.presenter.linkToSearch {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.black)
             }.buttonStyle(PlainButtonStyle()))
@@ -27,8 +29,4 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+

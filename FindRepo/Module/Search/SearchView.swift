@@ -9,14 +9,17 @@ import SwiftUI
 
 struct SearchView: View {
     
+    @ObservedObject var presenter: SearchPresenter
     @State var string = ""
     
     var body: some View {
         ScrollView {
             searchInput
-            ForEach(1..<10) { _ in
+            ForEach(presenter.searchResults) { _ in
                 HomeRow()
             }
+        }.onAppear {
+            presenter.searchRepos(query: "Swift")
         }
     }
 }
@@ -50,8 +53,8 @@ extension SearchView {
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+//}

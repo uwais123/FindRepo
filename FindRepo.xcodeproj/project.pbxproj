@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520BCD7B26500C560009E6EB /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD7A26500C560009E6EB /* CustomError.swift */; };
+		520BCD7F265011900009E6EB /* RepoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD7E265011900009E6EB /* RepoResponse.swift */; };
+		520BCD85265011B90009E6EB /* OwnerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD84265011B90009E6EB /* OwnerItem.swift */; };
+		520BCD8A265016EE0009E6EB /* RepoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD89265016EE0009E6EB /* RepoMapper.swift */; };
+		520BCD8D265018F10009E6EB /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD8C265018F10009E6EB /* SearchPresenter.swift */; };
+		520BCD9026501B6C0009E6EB /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD8F26501B6C0009E6EB /* HomeRouter.swift */; };
+		520BCD9326501B770009E6EB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD9226501B770009E6EB /* HomePresenter.swift */; };
 		5227A540264FE6E900B67375 /* HomeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A53F264FE6E900B67375 /* HomeRow.swift */; };
 		5227A545264FF42300B67375 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A544264FF42300B67375 /* SearchView.swift */; };
 		5227A549264FFBBF00B67375 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A548264FFBBF00B67375 /* DetailView.swift */; };
@@ -16,7 +23,7 @@
 		52827419264FB78500A6FEBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52827418264FB78500A6FEBD /* Preview Assets.xcassets */; };
 		52827430264FBAA000A6FEBD /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282742F264FBAA000A6FEBD /* Injection.swift */; };
 		52827437264FBAE000A6FEBD /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52827436264FBAE000A6FEBD /* Repo.swift */; };
-		5282743B264FBAE900A6FEBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282743A264FBAE900A6FEBD /* User.swift */; };
+		5282743B264FBAE900A6FEBD /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282743A264FBAE900A6FEBD /* Owner.swift */; };
 		5282743E264FBC0000A6FEBD /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282743D264FBC0000A6FEBD /* HomeInteractor.swift */; };
 		52827441264FBC0E00A6FEBD /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52827440264FBC0D00A6FEBD /* DetailInteractor.swift */; };
 		52827444264FBC1B00A6FEBD /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52827443264FBC1B00A6FEBD /* RemoteDataSource.swift */; };
@@ -26,10 +33,16 @@
 		52827454264FBE9D00A6FEBD /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 52827453264FBE9D00A6FEBD /* Realm */; };
 		52827456264FBE9D00A6FEBD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 52827455264FBE9D00A6FEBD /* RealmSwift */; };
 		5282745A264FBF6600A6FEBD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 52827459264FBF6600A6FEBD /* Alamofire */; };
-		5282745E264FC0B900A6FEBD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5282745D264FC0B900A6FEBD /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520BCD7A26500C560009E6EB /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		520BCD7E265011900009E6EB /* RepoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoResponse.swift; sourceTree = "<group>"; };
+		520BCD84265011B90009E6EB /* OwnerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerItem.swift; sourceTree = "<group>"; };
+		520BCD89265016EE0009E6EB /* RepoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoMapper.swift; sourceTree = "<group>"; };
+		520BCD8C265018F10009E6EB /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		520BCD8F26501B6C0009E6EB /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		520BCD9226501B770009E6EB /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		5227A53F264FE6E900B67375 /* HomeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRow.swift; sourceTree = "<group>"; };
 		5227A544264FF42300B67375 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		5227A548264FFBBF00B67375 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -41,7 +54,7 @@
 		5282741A264FB78500A6FEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5282742F264FBAA000A6FEBD /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		52827436264FBAE000A6FEBD /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
-		5282743A264FBAE900A6FEBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5282743A264FBAE900A6FEBD /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		5282743D264FBC0000A6FEBD /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		52827440264FBC0D00A6FEBD /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		52827443264FBC1B00A6FEBD /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
@@ -57,7 +70,6 @@
 			files = (
 				5282745A264FBF6600A6FEBD /* Alamofire in Frameworks */,
 				52827456264FBE9D00A6FEBD /* RealmSwift in Frameworks */,
-				5282745E264FC0B900A6FEBD /* Moya in Frameworks */,
 				52827454264FBE9D00A6FEBD /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,10 +77,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520BCD88265016E20009E6EB /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				520BCD89265016EE0009E6EB /* RepoMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 		5227A542264FF22300B67375 /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				5227A544264FF42300B67375 /* SearchView.swift */,
+				520BCD8C265018F10009E6EB /* SearchPresenter.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -122,6 +143,7 @@
 		52827422264FB7E200A6FEBD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				520BCD88265016E20009E6EB /* Mapper */,
 				5282742E264FBA6400A6FEBD /* Entities */,
 				52827425264FB80800A6FEBD /* Interactor */,
 				52827424264FB7EF00A6FEBD /* Data Source */,
@@ -188,7 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				52827413264FB78400A6FEBD /* HomeView.swift */,
+				520BCD9226501B770009E6EB /* HomePresenter.swift */,
 				5227A53F264FE6E900B67375 /* HomeRow.swift */,
+				520BCD8F26501B6C0009E6EB /* HomeRouter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -204,6 +228,8 @@
 		5282742B264FB95A00A6FEBD /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				520BCD7E265011900009E6EB /* RepoResponse.swift */,
+				520BCD84265011B90009E6EB /* OwnerItem.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -227,7 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				52827436264FBAE000A6FEBD /* Repo.swift */,
-				5282743A264FBAE900A6FEBD /* User.swift */,
+				5282743A264FBAE900A6FEBD /* Owner.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -237,6 +263,7 @@
 			children = (
 				5282744B264FBCDF00A6FEBD /* Constants.swift */,
 				5282744F264FBCE900A6FEBD /* Extentsions.swift */,
+				520BCD7A26500C560009E6EB /* CustomError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -261,7 +288,6 @@
 				52827453264FBE9D00A6FEBD /* Realm */,
 				52827455264FBE9D00A6FEBD /* RealmSwift */,
 				52827459264FBF6600A6FEBD /* Alamofire */,
-				5282745D264FC0B900A6FEBD /* Moya */,
 			);
 			productName = FindRepo;
 			productReference = 5282740E264FB78400A6FEBD /* FindRepo.app */;
@@ -293,7 +319,6 @@
 			packageReferences = (
 				52827452264FBE9D00A6FEBD /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				52827458264FBF6600A6FEBD /* XCRemoteSwiftPackageReference "Alamofire" */,
-				5282745C264FC0B900A6FEBD /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 5282740F264FB78400A6FEBD /* Products */;
 			projectDirPath = "";
@@ -322,7 +347,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				52827450264FBCE900A6FEBD /* Extentsions.swift in Sources */,
+				520BCD8A265016EE0009E6EB /* RepoMapper.swift in Sources */,
+				520BCD8D265018F10009E6EB /* SearchPresenter.swift in Sources */,
+				520BCD7B26500C560009E6EB /* CustomError.swift in Sources */,
 				52827444264FBC1B00A6FEBD /* RemoteDataSource.swift in Sources */,
+				520BCD85265011B90009E6EB /* OwnerItem.swift in Sources */,
 				52827430264FBAA000A6FEBD /* Injection.swift in Sources */,
 				5227A549264FFBBF00B67375 /* DetailView.swift in Sources */,
 				52827414264FB78400A6FEBD /* HomeView.swift in Sources */,
@@ -332,9 +361,12 @@
 				5282743E264FBC0000A6FEBD /* HomeInteractor.swift in Sources */,
 				5227A545264FF42300B67375 /* SearchView.swift in Sources */,
 				52827441264FBC0E00A6FEBD /* DetailInteractor.swift in Sources */,
+				520BCD9026501B6C0009E6EB /* HomeRouter.swift in Sources */,
 				5227A540264FE6E900B67375 /* HomeRow.swift in Sources */,
-				5282743B264FBAE900A6FEBD /* User.swift in Sources */,
+				5282743B264FBAE900A6FEBD /* Owner.swift in Sources */,
 				52827437264FBAE000A6FEBD /* Repo.swift in Sources */,
+				520BCD7F265011900009E6EB /* RepoResponse.swift in Sources */,
+				520BCD9326501B770009E6EB /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,14 +573,6 @@
 				minimumVersion = 5.4.3;
 			};
 		};
-		5282745C264FC0B900A6FEBD /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 14.0.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -566,11 +590,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52827458264FBF6600A6FEBD /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		5282745D264FC0B900A6FEBD /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5282745C264FC0B900A6FEBD /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

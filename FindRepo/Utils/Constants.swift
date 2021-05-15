@@ -6,3 +6,30 @@
 //
 
 import Foundation
+
+
+struct Constants {
+    
+    static let baseUrl = "https://api.github.com/"
+    static let placeHolder = "https://www.btklsby.go.id/images/placeholder/basic.png"
+
+}
+
+
+protocol Endpoint {
+    var url: String { get }
+}
+
+enum Endpoints {
+    
+    enum Gets: Endpoint {
+        case search
+        
+        public var url: String {
+            switch self {
+            case .search: return "\(Constants.baseUrl)search/repositories?q="
+            }
+        }
+    }
+    
+}
