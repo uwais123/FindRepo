@@ -16,8 +16,8 @@ struct HomeView: View {
         NavigationView {
             ZStack {
                 ScrollView {
-                    ForEach(presenter.repos) { _ in
-                        Text("anyways")
+                    ForEach(presenter.repos) { item in
+                        HomeRow(repo: item)
                     }
                 }
             }

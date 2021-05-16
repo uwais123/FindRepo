@@ -126,7 +126,7 @@ final class RepoMapper {
                 id: result.id,
                 fullName: result.fullName,
                 name: result.name,
-                description: result.description,
+                description: result.desc,
                 starGazersCount: result.starGazersCount,
                 forksCount: result.forksCount,
                 language: result.language,

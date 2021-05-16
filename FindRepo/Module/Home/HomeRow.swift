@@ -15,7 +15,7 @@ struct HomeRow: View {
         HStack {
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
-                    Text("\(repo.owner!.name) /")
+                    Text("\(repo.owner?.name ?? "Unknown") /")
                         .foregroundColor(.blue)
                     Text(repo.name)
                         .foregroundColor(.blue)
@@ -27,7 +27,7 @@ struct HomeRow: View {
                 Text(repo.description)
                     .padding(.top, 3)
                     .font(.system(size: 14))
-                
+                                
                 HStack {
                     Text("🟡 \(repo.language)")
                         .font(.system(size: 12))

@@ -23,7 +23,7 @@ struct SearchView: View {
                     NavigationLink(destination: DetailView(htmlUrl: item.htmlUrl)) {
                         HomeRow(repo: item)
                     }.buttonStyle(PlainButtonStyle())
-                    .onTapGesture {
+                    .onAppear {
                         presenter.addVisitedRepo(repo: item)
                     }
                 }

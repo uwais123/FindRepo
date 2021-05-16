@@ -35,6 +35,7 @@ class HomePresenter: ObservableObject {
                 }
             }, receiveValue: { repos in
                 self.repos = repos
+                print("saved \(repos)")
             }).store(in: &cancellables)
     }
     

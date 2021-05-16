@@ -18,6 +18,9 @@ struct DetailView: View {
                 trailing: Text(htmlUrl)
                     .fontWeight(.medium)
             )
+            .onAppear {
+                
+            }
     }
 }
 
