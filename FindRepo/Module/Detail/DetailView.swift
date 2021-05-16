@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    var htmlUrl: String
+    
     var body: some View {
-        VStack {
-            // just a regular webview i guess
-            Text("Detail")
-        }
+        WebView(url: URL(string: htmlUrl))
+            .edgesIgnoringSafeArea([.bottom, .horizontal])
+            .navigationBarItems(
+                trailing: Text(htmlUrl)
+                    .fontWeight(.medium)
+            )
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(htmlUrl: "https://github.com/apple/swift")
     }
 }
