@@ -21,6 +21,24 @@ class SearchPresenter: ObservableObject {
     
     init(searchProvider: HomeProvider) {
         self.searchProvider = searchProvider
+        
+        $searchText
+            .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .map { string in
+                if string.count < 1 {
+                    self.searchResults = []
+                    return nil
+                }
+                return string
+            }
+            .compactMap { $0 }
+            .sink { (_) in
+                
+            } receiveValue: { searchField in
+                self.searchRepos(query: searchField)
+                
+            }.store(in: &cancellables)
     }
     
     func searchRepos(query: String) {

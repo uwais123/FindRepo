@@ -9,7 +9,7 @@ import Foundation
 
 final class RepoMapper {
     
-    static func mapRepoResponeToEntities(
+    static func mapRepoResponseToEntities(
         input repoResponse: [RepoItem]
     ) -> [Repo] {
         

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Owner: Codable, Identifiable {
-    let id: String
+    let id: Int
     let name: String
     let avatarUrl: String
     let profileUrl: String

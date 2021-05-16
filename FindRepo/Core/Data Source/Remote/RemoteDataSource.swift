@@ -28,7 +28,7 @@ extension RemoteDataSource: RemoteDataProtocol {
                     .responseDecodable(of: RepoResponse.self) { response in
                         switch response.result {
                         case .success(let value):
-                            completion(.success(value.repos))
+                            completion(.success(value.items))
                         case .failure:
                             completion(.failure(URLError.invalidResponse))
                         }

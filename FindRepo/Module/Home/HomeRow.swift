@@ -8,25 +8,28 @@
 import SwiftUI
 
 struct HomeRow: View {
+    
+    var repo: Repo
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Uwais123 /")
+                    Text("\(repo.fullName) /")
                         .foregroundColor(.blue)
-                    Text("MovieCatalogue")
+                    Text(repo.fullName)
                         .foregroundColor(.blue)
                         .fontWeight(.bold)
                         .padding(.leading, -5)
                     
                 }
                 
-                Text("MovieDB iOS Client App (Programmatic UIKit, MVVM, Clean Architecture, Realm, Alamofire, RxSwift, Manual DI)")
+                Text(repo.description)
                     .padding(.top, 3)
                     .font(.system(size: 14))
                 
                 HStack {
-                    Text("🟡 Swift")
+                    Text("🟡 \(repo.language)")
                         .font(.system(size: 12))
                     
                     Text("Updated 8 days ago")
@@ -39,7 +42,7 @@ struct HomeRow: View {
                         Image(systemName: "star")
                             .foregroundColor(.yellow)
                         
-                        Text("3k")
+                        Text(String(repo.starGazersCount))
                             .padding(.leading, -5)
                             .font(.system(size: 12))
                     }
@@ -55,11 +58,5 @@ struct HomeRow: View {
         )
         .padding(.horizontal, 10)
         .padding(.top, 5)
-    }
-}
-
-struct HomeRow_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeRow().previewLayout(.sizeThatFits)
     }
 }

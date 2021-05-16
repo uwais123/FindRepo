@@ -15,8 +15,8 @@ struct SearchView: View {
     var body: some View {
         ScrollView {
             searchInput
-            ForEach(presenter.searchResults) { _ in
-                HomeRow()
+            ForEach(presenter.searchResults) { item in
+                HomeRow(repo: item)
             }
         }.onAppear {
             presenter.searchRepos(query: "Swift")
@@ -28,12 +28,9 @@ extension SearchView {
     
     var searchInput: some View {
         VStack(alignment: .leading) {
-//            Text("Search")
-//                .padding(.leading, 10)
-//                .font(.system(size: 25, weight: .bold))
             
             HStack {
-                TextField("Search some repo..", text: $string)
+                TextField("Search some repo..", text: $presenter.searchText)
                     .font(.system(size: 15))
                     .padding(.horizontal, 15)
                     .frame(height: 40)
@@ -52,9 +49,3 @@ extension SearchView {
         }
     }
 }
-
-//struct SearchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchView()
-//    }
-//}

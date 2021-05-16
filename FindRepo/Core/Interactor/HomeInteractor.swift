@@ -31,7 +31,7 @@ extension HomeInteractor: HomeProvider {
     
     func searchRepos(query: String) -> AnyPublisher<[Repo], Error> {
         return self.remote.searchRepos(query: query)
-            .map { RepoMapper.mapRepoResponeToEntities(input: $0) }
+            .map { RepoMapper.mapRepoResponseToEntities(input: $0) }
             .eraseToAnyPublisher()
     }
     

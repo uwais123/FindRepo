@@ -8,20 +8,20 @@
 import Foundation
 
 struct RepoResponse: Codable {
-    let repos: [RepoItem]
+    let items: [RepoItem]
     
     enum CodingKeys: String, CodingKey {
-        case repos = "items"
+        case items
     }
 }
 
 struct RepoItem: Hashable, Codable, Identifiable {
-    let id: String
+    let id: Int64
     let fullName: String
     let name: String
     let description: String?
-    let starGazersCount: String
-    let forksCount: String
+    let starGazersCount: Int64
+    let forksCount: Int64
     let language: String
     //let owner: OwnerItem
     let htmlUrl: String

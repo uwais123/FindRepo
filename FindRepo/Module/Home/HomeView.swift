@@ -16,7 +16,8 @@ struct HomeView: View {
             ZStack {
                 ScrollView {
                     ForEach(1..<10) { _ in
-                        HomeRow()
+                        // HomeRow()
+                        Text("anyways")
                     }
                 }
             }
