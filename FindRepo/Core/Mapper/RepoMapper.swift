@@ -16,16 +16,45 @@ final class RepoMapper {
         return repoResponse.map { result in
             return Repo(
                 id: result.id,
-                fullName: result.fullName,
-                name: result.name,
+                fullName: result.fullName ?? "Unknown",
+                name: result.name ?? "Unknown",
                 description: result.description ?? "No Description",
-                starGazersCount: result.starGazersCount,
-                forksCount: result.forksCount,
-                language: result.language,
-                //owner: result.owner,
-                htmlUrl: result.htmlUrl,
-                detailUrl: result.cloneUrl,
-                cloneUrl: result.cloneUrl
+                starGazersCount: result.starGazersCount ?? 0,
+                forksCount: result.forksCount ?? 0,
+                language: result.language ?? "Unknown",
+                owner: mapOwnerResponseToEntities(input: result.owner),
+                htmlUrl: result.htmlUrl ?? "Unknown",
+                detailUrl: result.detailUrl ?? "Unknown",
+                cloneUrl: result.cloneUrl ?? "Unknown",
+                lastUpdate: result.lastUpdate ?? "Unknown"
+            )
+        }
+    }
+    
+    static func mapOwnerResponseToEntities(
+        input ownerItem: OwnerItem
+    ) -> Owner {
+        
+        return Owner(
+            id: ownerItem.id,
+            name: ownerItem.name ?? "Unknown",
+            avatarUrl: ownerItem.avatarUrl ?? "Unknown",
+            profileUrl: ownerItem.profileUrl ?? "Unknown",
+            htmlUrl: ownerItem.htmlUrl ?? "Unknown"
+        )
+    }
+    
+    static func mapOwnerResponseToEntities(
+        input ownerResponse: [OwnerItem]
+    ) -> [Owner] {
+        
+        return ownerResponse.map { result in
+            return Owner(
+                id: result.id,
+                name: result.name ?? "Unknown",
+                avatarUrl: result.avatarUrl ?? "Unknown",
+                profileUrl: result.profileUrl ?? "Unknown",
+                htmlUrl: result.htmlUrl ?? "Unknown"
             )
         }
     }

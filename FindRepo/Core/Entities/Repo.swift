@@ -15,8 +15,9 @@ struct Repo: Codable, Identifiable {
     let starGazersCount: Int64
     let forksCount: Int64
     let language: String
-    //let owner: Owner
+    let owner: Owner
     let htmlUrl: String
     let detailUrl: String
     let cloneUrl: String
+    let lastUpdate: String
 }

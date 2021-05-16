@@ -9,11 +9,11 @@ import Foundation
 
 
 struct OwnerItem: Codable, Identifiable {
-    let id: String
-    let name: String
-    let avatarUrl: String
-    let profileUrl: String
-    let htmlUrl: String
+    let id: Int64
+    let name: String?
+    let avatarUrl: String?
+    let profileUrl: String?
+    let htmlUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case id

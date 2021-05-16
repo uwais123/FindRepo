@@ -14,10 +14,10 @@ struct HomeRow: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                HStack {
-                    Text("\(repo.fullName) /")
+                HStack(alignment: .top) {
+                    Text("\(repo.owner.name) /")
                         .foregroundColor(.blue)
-                    Text(repo.fullName)
+                    Text(repo.name)
                         .foregroundColor(.blue)
                         .fontWeight(.bold)
                         .padding(.leading, -5)
@@ -32,7 +32,7 @@ struct HomeRow: View {
                     Text("🟡 \(repo.language)")
                         .font(.system(size: 12))
                     
-                    Text("Updated 8 days ago")
+                    Text(repo.lastUpdate)
                         .padding(.leading, 5)
                         .font(.system(size: 12))
                     

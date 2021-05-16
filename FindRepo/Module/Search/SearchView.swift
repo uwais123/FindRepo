@@ -15,11 +15,14 @@ struct SearchView: View {
     var body: some View {
         ScrollView {
             searchInput
-            ForEach(presenter.searchResults) { item in
-                HomeRow(repo: item)
+            if presenter.loadingState {
+                ActivityIndicator()
+                    .padding(.top, 15)
+            } else {
+                ForEach(presenter.searchResults) { item in
+                    HomeRow(repo: item)
+                }
             }
-        }.onAppear {
-            presenter.searchRepos(query: "Swift")
         }
     }
 }
