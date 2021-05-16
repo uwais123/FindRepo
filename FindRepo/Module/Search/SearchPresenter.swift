@@ -11,7 +11,7 @@ import SwiftUI
 
 class SearchPresenter: ObservableObject {
     
-    private let searchProvider: HomeProvider
+    private let provider: HomeProvider
     private var cancellables: Set<AnyCancellable> = []
     
     @Published var searchResults: [Repo] = []
@@ -19,8 +19,8 @@ class SearchPresenter: ObservableObject {
     @Published var loadingState: Bool = false
     @Published var searchText: String = String()
     
-    init(searchProvider: HomeProvider) {
-        self.searchProvider = searchProvider
+    init(provider: HomeProvider) {
+        self.provider = provider
         
         $searchText
             .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
@@ -43,7 +43,7 @@ class SearchPresenter: ObservableObject {
     
     func searchRepos(query: String) {
         self.loadingState = true
-        searchProvider.searchRepos(query: query)
+        provider.searchRepos(query: query)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -61,6 +61,38 @@ class SearchPresenter: ObservableObject {
                     self.searchResults = searchResults
                     print(searchResults)
                 }
+            }).store(in: &cancellables)
+    }
+    
+    func addVisitedRepo(repo: Repo) {
+        provider.addVisitedRepo(from: repo)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                    self.errorMessage = String(describing: completion)
+                    print(self.errorMessage)
+                case .finished:
+                    print(completion)
+                }
+            }, receiveValue: { isSaved in
+                print("isSaved \(isSaved)")
+            }).store(in: &cancellables)
+    }
+    
+    func removeVisitedRepo(idRepo: String) {
+        provider.removeVisitedRepo(from: idRepo)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                    self.errorMessage = String(describing: completion)
+                    print(self.errorMessage)
+                case .finished:
+                    print(completion)
+                }
+            }, receiveValue: { isSaved in
+                print(isSaved)
             }).store(in: &cancellables)
     }
 }

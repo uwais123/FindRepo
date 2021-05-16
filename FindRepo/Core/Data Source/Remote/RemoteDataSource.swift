@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import Alamofire
 
-protocol RemoteDataProtocol {
+protocol RemoteDataSourceProtocol {
     func searchRepos(query: String) -> AnyPublisher<[RepoItem], Error>
 }
 
@@ -19,7 +19,7 @@ final class RemoteDataSource: NSObject {
     static let sharedInstance: RemoteDataSource = RemoteDataSource()
 }
 
-extension RemoteDataSource: RemoteDataProtocol {
+extension RemoteDataSource: RemoteDataSourceProtocol {
     func searchRepos(query: String) -> AnyPublisher<[RepoItem], Error> {
         return Future<[RepoItem], Error> { completion in
             if let url = URL(string: Endpoints.Gets.search.url + query) {

@@ -23,6 +23,9 @@ struct SearchView: View {
                     NavigationLink(destination: DetailView(htmlUrl: item.htmlUrl)) {
                         HomeRow(repo: item)
                     }.buttonStyle(PlainButtonStyle())
+                    .onTapGesture {
+                        presenter.addVisitedRepo(repo: item)
+                    }
                 }
             }
         }
@@ -48,8 +51,7 @@ extension SearchView {
                                 .foregroundColor(Color(.systemGray2))
                                 .padding(.trailing, 13)
                         }
-                    )
-                    .padding(.horizontal, 10)
+                    ).padding(.horizontal, 10)
             }
         }
     }

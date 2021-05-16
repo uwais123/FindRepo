@@ -11,8 +11,8 @@ import SwiftUI
 class HomeRouter {
     
     func makeSearchView() -> some View {
-        let searchProvider = Injection.init().provideInteractor()
-        let presenter = SearchPresenter(searchProvider: searchProvider)
+        let provider = Injection.init().provideInteractor()
+        let presenter = SearchPresenter(provider: provider)
         return SearchView(presenter: presenter)
     }
 }

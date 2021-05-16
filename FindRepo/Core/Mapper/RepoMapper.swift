@@ -9,7 +9,8 @@ import Foundation
 
 final class RepoMapper {
     
-    static func mapRepoResponseToEntities(
+    // MARK: -- responses -> enitites (domain model)
+    static func mapRepoResponsesToEntities(
         input repoResponse: [RepoItem]
     ) -> [Repo] {
         
@@ -31,6 +32,7 @@ final class RepoMapper {
         }
     }
     
+    // MARK: -- response -> enitites (domain model)
     static func mapOwnerResponseToEntities(
         input ownerItem: OwnerItem
     ) -> Owner {
@@ -44,7 +46,21 @@ final class RepoMapper {
         )
     }
     
-    static func mapOwnerResponseToEntities(
+    // MARK: -- response -> enitites (domain model)
+    static func mapOwnerObjectToEntity(
+        input ownerObject: OwnerObject
+    ) -> Owner {
+        return Owner(
+            id: ownerObject.id,
+            name: ownerObject.name ,
+            avatarUrl: ownerObject.avatarUrl ,
+            profileUrl: ownerObject.profileUrl ,
+            htmlUrl: ownerObject.htmlUrl
+        )
+    }
+    
+    // MARK: -- responses -> enitites (domain model)
+    static func mapOwnerResponsesToEntities(
         input ownerResponse: [OwnerItem]
     ) -> [Owner] {
         
@@ -56,6 +72,69 @@ final class RepoMapper {
                 profileUrl: result.profileUrl ?? "Unknown",
                 htmlUrl: result.htmlUrl ?? "Unknown"
             )
+        }
+    }
+    
+    // MARK: -- responses -> object (locale model)
+    static func mapRepoResponseToObject(
+        input repoResponse: [RepoItem]
+    ) -> [RepoObject] {
+        return repoResponse.map { result in
+            let object = RepoObject()
+            object.id = result.id
+            object.fullName = result.fullName ?? ""
+            object.name = result.name ?? ""
+            object.desc = result.description ?? ""
+            object.starGazersCount = result.starGazersCount ?? 0
+            object.forksCount = result.forksCount ?? 0
+            object.language = result.language ?? ""
+            object.ownerName = result.owner.name ?? ""
+            object.htmlUrl = result.htmlUrl ?? ""
+            object.detailUrl = result.detailUrl ?? ""
+            object.cloneUrl = result.cloneUrl ?? ""
+            object.lastUpdate = result.lastUpdate ?? ""
+            return object
+        }
+    }
+    
+    // MARK: -- object -> entity (locale model)
+    static func mapRepoObjectToEntity(
+        input repoEntity: Repo
+    ) -> RepoObject {
+        let object = RepoObject()
+        object.id = repoEntity.id
+        object.fullName = repoEntity.fullName
+        object.name = repoEntity.name
+        object.desc = repoEntity.description
+        object.starGazersCount = repoEntity.starGazersCount
+        object.forksCount = repoEntity.forksCount
+        object.language = repoEntity.language
+        object.ownerName = repoEntity.owner!.name
+        object.htmlUrl = repoEntity.htmlUrl
+        object.detailUrl = repoEntity.detailUrl
+        object.cloneUrl = repoEntity.cloneUrl
+        object.lastUpdate = repoEntity.lastUpdate
+        return object
+    }
+    
+    // MARK: -- objects -> entities (locale model)
+    static func mapRepoObjectsToEntities(
+        input repoObjects: [RepoObject]
+    ) -> [Repo] {
+        return repoObjects.map { result in
+            return Repo(
+                id: result.id,
+                fullName: result.fullName,
+                name: result.name,
+                description: result.description,
+                starGazersCount: result.starGazersCount,
+                forksCount: result.forksCount,
+                language: result.language,
+                owner: nil,
+                htmlUrl: result.htmlUrl,
+                detailUrl: result.detailUrl,
+                cloneUrl: result.cloneUrl,
+                lastUpdate: result.lastUpdate)
         }
     }
 }

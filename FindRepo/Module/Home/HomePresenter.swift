@@ -23,6 +23,20 @@ class HomePresenter: ObservableObject {
         self.homeProvider = homeProvider
     }
     
+    func getVisitedRepo() {
+        homeProvider.getVisitedRepo()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                    self.errorMessage = String(describing: completion)
+                case .finished:
+                    print(completion)
+                }
+            }, receiveValue: { repos in
+                self.repos = repos
+            }).store(in: &cancellables)
+    }
     
     func linkToSearch<Content: View>(
         @ViewBuilder content: () -> Content

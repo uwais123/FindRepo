@@ -11,15 +11,18 @@ struct HomeView: View {
     
     @ObservedObject var presenter: HomePresenter
     
+    // MARK: -- implement lottie animation
     var body: some View {
         NavigationView {
             ZStack {
                 ScrollView {
-                    ForEach(1..<10) { _ in
-                        // HomeRow()
+                    ForEach(presenter.repos) { _ in
                         Text("anyways")
                     }
                 }
+            }
+            .onAppear {
+                presenter.getVisitedRepo()
             }
             .navigationTitle("Find Repo")
             .navigationBarItems(trailing: self.presenter.linkToSearch {

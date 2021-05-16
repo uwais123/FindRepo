@@ -20,6 +20,8 @@
 		5227A540264FE6E900B67375 /* HomeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A53F264FE6E900B67375 /* HomeRow.swift */; };
 		5227A545264FF42300B67375 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A544264FF42300B67375 /* SearchView.swift */; };
 		5227A549264FFBBF00B67375 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5227A548264FFBBF00B67375 /* DetailView.swift */; };
+		525559682651233C00777F7B /* RepoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525559672651233C00777F7B /* RepoObject.swift */; };
+		5255596B26512B3B00777F7B /* OwnerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255596A26512B3B00777F7B /* OwnerObject.swift */; };
 		52827412264FB78400A6FEBD /* FindRepoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52827411264FB78400A6FEBD /* FindRepoApp.swift */; };
 		52827414264FB78400A6FEBD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52827413264FB78400A6FEBD /* HomeView.swift */; };
 		52827416264FB78500A6FEBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52827415264FB78500A6FEBD /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		5227A53F264FE6E900B67375 /* HomeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRow.swift; sourceTree = "<group>"; };
 		5227A544264FF42300B67375 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		5227A548264FFBBF00B67375 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		525559672651233C00777F7B /* RepoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoObject.swift; sourceTree = "<group>"; };
+		5255596A26512B3B00777F7B /* OwnerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerObject.swift; sourceTree = "<group>"; };
 		5282740E264FB78400A6FEBD /* FindRepo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindRepo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52827411264FB78400A6FEBD /* FindRepoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRepoApp.swift; sourceTree = "<group>"; };
 		52827413264FB78400A6FEBD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 		5282742C264FB96000A6FEBD /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				525559672651233C00777F7B /* RepoObject.swift */,
+				5255596A26512B3B00777F7B /* OwnerObject.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -362,12 +368,14 @@
 				52827444264FBC1B00A6FEBD /* RemoteDataSource.swift in Sources */,
 				520BCD85265011B90009E6EB /* OwnerItem.swift in Sources */,
 				52827430264FBAA000A6FEBD /* Injection.swift in Sources */,
+				525559682651233C00777F7B /* RepoObject.swift in Sources */,
 				5227A549264FFBBF00B67375 /* DetailView.swift in Sources */,
 				52827414264FB78400A6FEBD /* HomeView.swift in Sources */,
 				520BCD9E2651090A0009E6EB /* WebView.swift in Sources */,
 				52827447264FBC2900A6FEBD /* LocaleDataSource.swift in Sources */,
 				52827412264FB78400A6FEBD /* FindRepoApp.swift in Sources */,
 				5282744C264FBCDF00A6FEBD /* Constants.swift in Sources */,
+				5255596B26512B3B00777F7B /* OwnerObject.swift in Sources */,
 				5282743E264FBC0000A6FEBD /* HomeInteractor.swift in Sources */,
 				5227A545264FF42300B67375 /* SearchView.swift in Sources */,
 				52827441264FBC0E00A6FEBD /* DetailInteractor.swift in Sources */,

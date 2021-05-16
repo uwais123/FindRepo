@@ -15,7 +15,7 @@ struct HomeRow: View {
         HStack {
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
-                    Text("\(repo.owner.name) /")
+                    Text("\(repo.owner!.name) /")
                         .foregroundColor(.blue)
                     Text(repo.name)
                         .foregroundColor(.blue)
