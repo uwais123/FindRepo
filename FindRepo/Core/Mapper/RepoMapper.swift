@@ -59,6 +59,19 @@ final class RepoMapper {
         )
     }
     
+    // MARK: -- entity -> object (local)
+    static func mapOwnerEntityToObject(
+        input ownerEntity: Owner
+    ) -> OwnerObject {
+        let object = OwnerObject()
+        object.id = ownerEntity.id
+        object.name = ownerEntity.name
+        object.avatarUrl = ownerEntity.avatarUrl
+        object.profileUrl = ownerEntity.profileUrl
+        object.htmlUrl = ownerEntity.htmlUrl
+        return object
+    }
+    
     // MARK: -- responses -> enitites (domain model)
     static func mapOwnerResponsesToEntities(
         input ownerResponse: [OwnerItem]
@@ -75,28 +88,6 @@ final class RepoMapper {
         }
     }
     
-    // MARK: -- responses -> object (locale model)
-    static func mapRepoResponseToObject(
-        input repoResponse: [RepoItem]
-    ) -> [RepoObject] {
-        return repoResponse.map { result in
-            let object = RepoObject()
-            object.id = result.id
-            object.fullName = result.fullName ?? ""
-            object.name = result.name ?? ""
-            object.desc = result.description ?? ""
-            object.starGazersCount = result.starGazersCount ?? 0
-            object.forksCount = result.forksCount ?? 0
-            object.language = result.language ?? ""
-            object.ownerName = result.owner.name ?? ""
-            object.htmlUrl = result.htmlUrl ?? ""
-            object.detailUrl = result.detailUrl ?? ""
-            object.cloneUrl = result.cloneUrl ?? ""
-            object.lastUpdate = result.lastUpdate ?? ""
-            return object
-        }
-    }
-    
     // MARK: -- object -> entity (locale model)
     static func mapRepoObjectToEntity(
         input repoEntity: Repo
@@ -109,7 +100,7 @@ final class RepoMapper {
         object.starGazersCount = repoEntity.starGazersCount
         object.forksCount = repoEntity.forksCount
         object.language = repoEntity.language
-        object.ownerName = repoEntity.owner!.name
+        object.owner = mapOwnerEntityToObject(input: repoEntity.owner ?? Owner(id: 0, name: "", avatarUrl: "", profileUrl: "", htmlUrl: ""))
         object.htmlUrl = repoEntity.htmlUrl
         object.detailUrl = repoEntity.detailUrl
         object.cloneUrl = repoEntity.cloneUrl
@@ -130,7 +121,7 @@ final class RepoMapper {
                 starGazersCount: result.starGazersCount,
                 forksCount: result.forksCount,
                 language: result.language,
-                owner: nil,
+                owner: mapOwnerObjectToEntity(input: result.owner ?? OwnerObject()),
                 htmlUrl: result.htmlUrl,
                 detailUrl: result.detailUrl,
                 cloneUrl: result.cloneUrl,

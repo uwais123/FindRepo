@@ -24,7 +24,7 @@ struct HomeView: View {
             .onAppear {
                 presenter.getVisitedRepo()
             }
-            .navigationTitle("Find Repo")
+            .navigationTitle("Visited Repo")
             .navigationBarItems(trailing: self.presenter.linkToSearch {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.black)
