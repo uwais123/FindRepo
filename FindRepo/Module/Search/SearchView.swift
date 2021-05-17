@@ -20,7 +20,7 @@ struct SearchView: View {
                     .padding(.top, 15)
             } else {
                 ForEach(presenter.searchResults) { item in
-                    presenter.linkToSearch(item: item) {
+                    presenter.linkToDetail(item: item) {
                         HomeRow(repo: item)
                     }.buttonStyle(PlainButtonStyle())
                 }

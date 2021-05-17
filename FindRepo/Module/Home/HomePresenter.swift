@@ -46,4 +46,14 @@ class HomePresenter: ObservableObject {
             destination: router.makeSearchView()
         ) { content() }
     }
+    
+    func linkToDetail<Content: View>(
+        item repo: Repo,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        NavigationLink(
+            destination: router.makeDetailView(repo: repo)
+        ) { content() }
+    }
+    
 }

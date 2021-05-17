@@ -82,7 +82,7 @@ class SearchPresenter: ObservableObject {
     }
     
     
-    func linkToSearch<Content: View>(
+    func linkToDetail<Content: View>(
         item repo: Repo,
         @ViewBuilder content: () -> Content
     ) -> some View {

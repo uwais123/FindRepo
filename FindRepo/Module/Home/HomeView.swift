@@ -17,7 +17,9 @@ struct HomeView: View {
             ZStack {
                 ScrollView {
                     ForEach(presenter.repos) { item in
-                        HomeRow(repo: item)
+                        presenter.linkToDetail(item: item) {
+                            HomeRow(repo: item)
+                        }.buttonStyle(PlainButtonStyle())
                     }
                 }
             }

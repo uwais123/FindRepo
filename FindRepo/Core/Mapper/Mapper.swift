@@ -100,7 +100,7 @@ final class Mapper {
         object.starGazersCount = repoEntity.starGazersCount
         object.forksCount = repoEntity.forksCount
         object.language = repoEntity.language
-        object.ownerName = repoEntity.owner!.name
+        object.ownerName = String(repoEntity.owner?.name ?? "Unknown")
         object.htmlUrl = repoEntity.htmlUrl
         object.detailUrl = repoEntity.detailUrl
         object.cloneUrl = repoEntity.cloneUrl

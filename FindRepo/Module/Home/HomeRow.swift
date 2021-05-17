@@ -48,7 +48,7 @@ struct HomeRow: View {
                         Image(systemName: "star")
                             .foregroundColor(.yellow)
                         
-                        Text(String(repo.starGazersCount))
+                        Text(String(repo.starGazersCount.roundedWithAbbreviations))
                             .padding(.leading, -5)
                             .font(.system(size: 12))
                     }
