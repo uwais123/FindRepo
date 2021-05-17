@@ -11,6 +11,12 @@ struct HomeRow: View {
     
     var repo: Repo
     
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = Constants.completeFormat
+        return formatter
+    }
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -32,7 +38,7 @@ struct HomeRow: View {
                     Text("🟡 \(repo.language)")
                         .font(.system(size: 12))
                     
-                    Text(repo.lastUpdate)
+                    Text(repo.lastUpdate.formatDate(), style: .date)
                         .padding(.leading, 5)
                         .font(.system(size: 12))
                     

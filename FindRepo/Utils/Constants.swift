@@ -12,7 +12,8 @@ struct Constants {
     
     static let baseUrl = "https://api.github.com/"
     static let placeHolder = "https://www.btklsby.go.id/images/placeholder/basic.png"
-
+    static let completeFormat = "EEEE, dd MMMM yyyy"
+    static let basicFormat = "dd/MM/yy"
 }
 
 
