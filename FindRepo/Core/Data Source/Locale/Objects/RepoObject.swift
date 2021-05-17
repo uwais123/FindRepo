@@ -17,7 +17,7 @@ public class RepoObject: Object {
     @objc dynamic var starGazersCount: Int64 = 0
     @objc dynamic var forksCount: Int64 = 0
     @objc dynamic var language: String = ""
-    @objc dynamic var owner: OwnerObject? = OwnerObject()
+    @objc dynamic var ownerName: String = OwnerObject().name
     @objc dynamic var htmlUrl: String = ""
     @objc dynamic var detailUrl: String = ""
     @objc dynamic var cloneUrl: String = ""

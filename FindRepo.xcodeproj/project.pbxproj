@@ -10,7 +10,7 @@
 		520BCD7B26500C560009E6EB /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD7A26500C560009E6EB /* CustomError.swift */; };
 		520BCD7F265011900009E6EB /* RepoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD7E265011900009E6EB /* RepoResponse.swift */; };
 		520BCD85265011B90009E6EB /* OwnerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD84265011B90009E6EB /* OwnerItem.swift */; };
-		520BCD8A265016EE0009E6EB /* RepoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD89265016EE0009E6EB /* RepoMapper.swift */; };
+		520BCD8A265016EE0009E6EB /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD89265016EE0009E6EB /* Mapper.swift */; };
 		520BCD8D265018F10009E6EB /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD8C265018F10009E6EB /* SearchPresenter.swift */; };
 		520BCD9026501B6C0009E6EB /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD8F26501B6C0009E6EB /* HomeRouter.swift */; };
 		520BCD9326501B770009E6EB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCD9226501B770009E6EB /* HomePresenter.swift */; };
@@ -30,7 +30,6 @@
 		52827437264FBAE000A6FEBD /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52827436264FBAE000A6FEBD /* Repo.swift */; };
 		5282743B264FBAE900A6FEBD /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282743A264FBAE900A6FEBD /* Owner.swift */; };
 		5282743E264FBC0000A6FEBD /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282743D264FBC0000A6FEBD /* HomeInteractor.swift */; };
-		52827441264FBC0E00A6FEBD /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52827440264FBC0D00A6FEBD /* DetailInteractor.swift */; };
 		52827444264FBC1B00A6FEBD /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52827443264FBC1B00A6FEBD /* RemoteDataSource.swift */; };
 		52827447264FBC2900A6FEBD /* LocaleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52827446264FBC2900A6FEBD /* LocaleDataSource.swift */; };
 		5282744C264FBCDF00A6FEBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282744B264FBCDF00A6FEBD /* Constants.swift */; };
@@ -38,13 +37,14 @@
 		52827454264FBE9D00A6FEBD /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 52827453264FBE9D00A6FEBD /* Realm */; };
 		52827456264FBE9D00A6FEBD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 52827455264FBE9D00A6FEBD /* RealmSwift */; };
 		5282745A264FBF6600A6FEBD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 52827459264FBF6600A6FEBD /* Alamofire */; };
+		529674FB26529AAC00814509 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529674FA26529AAC00814509 /* SearchRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		520BCD7A26500C560009E6EB /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		520BCD7E265011900009E6EB /* RepoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoResponse.swift; sourceTree = "<group>"; };
 		520BCD84265011B90009E6EB /* OwnerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerItem.swift; sourceTree = "<group>"; };
-		520BCD89265016EE0009E6EB /* RepoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoMapper.swift; sourceTree = "<group>"; };
+		520BCD89265016EE0009E6EB /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		520BCD8C265018F10009E6EB /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		520BCD8F26501B6C0009E6EB /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		520BCD9226501B770009E6EB /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -66,11 +66,11 @@
 		52827436264FBAE000A6FEBD /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		5282743A264FBAE900A6FEBD /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		5282743D264FBC0000A6FEBD /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		52827440264FBC0D00A6FEBD /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		52827443264FBC1B00A6FEBD /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		52827446264FBC2900A6FEBD /* LocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleDataSource.swift; sourceTree = "<group>"; };
 		5282744B264FBCDF00A6FEBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5282744F264FBCE900A6FEBD /* Extentsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentsions.swift; sourceTree = "<group>"; };
+		529674FA26529AAC00814509 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 		520BCD88265016E20009E6EB /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				520BCD89265016EE0009E6EB /* RepoMapper.swift */,
+				520BCD89265016EE0009E6EB /* Mapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -100,6 +100,7 @@
 			children = (
 				5227A544264FF42300B67375 /* SearchView.swift */,
 				520BCD8C265018F10009E6EB /* SearchPresenter.swift */,
+				529674FA26529AAC00814509 /* SearchRouter.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -184,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				5282743D264FBC0000A6FEBD /* HomeInteractor.swift */,
-				52827440264FBC0D00A6FEBD /* DetailInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -362,7 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52827450264FBCE900A6FEBD /* Extentsions.swift in Sources */,
-				520BCD8A265016EE0009E6EB /* RepoMapper.swift in Sources */,
+				520BCD8A265016EE0009E6EB /* Mapper.swift in Sources */,
 				520BCD8D265018F10009E6EB /* SearchPresenter.swift in Sources */,
 				520BCD7B26500C560009E6EB /* CustomError.swift in Sources */,
 				52827444264FBC1B00A6FEBD /* RemoteDataSource.swift in Sources */,
@@ -372,13 +372,13 @@
 				5227A549264FFBBF00B67375 /* DetailView.swift in Sources */,
 				52827414264FB78400A6FEBD /* HomeView.swift in Sources */,
 				520BCD9E2651090A0009E6EB /* WebView.swift in Sources */,
+				529674FB26529AAC00814509 /* SearchRouter.swift in Sources */,
 				52827447264FBC2900A6FEBD /* LocaleDataSource.swift in Sources */,
 				52827412264FB78400A6FEBD /* FindRepoApp.swift in Sources */,
 				5282744C264FBCDF00A6FEBD /* Constants.swift in Sources */,
 				5255596B26512B3B00777F7B /* OwnerObject.swift in Sources */,
 				5282743E264FBC0000A6FEBD /* HomeInteractor.swift in Sources */,
 				5227A545264FF42300B67375 /* SearchView.swift in Sources */,
-				52827441264FBC0E00A6FEBD /* DetailInteractor.swift in Sources */,
 				520BCD9026501B6C0009E6EB /* HomeRouter.swift in Sources */,
 				520BCD9B265108BD0009E6EB /* DetailPresenter.swift in Sources */,
 				520BCD982650C4830009E6EB /* ActivityIndicator.swift in Sources */,

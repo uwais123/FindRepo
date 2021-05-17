@@ -19,4 +19,20 @@ class DetailPresenter: ObservableObject {
     init(provider: HomeProvider) {
         self.provider = provider
     }
+    
+    func addVisitedRepo(repo: Repo) {
+        provider.addVisitedRepo(from: repo)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                    self.errorMessage = String(describing: completion)
+                    print(self.errorMessage)
+                case .finished:
+                    print(completion)
+                }
+            }, receiveValue: { isSaved in
+                print("isSaved \(isSaved)")
+            }).store(in: &cancellables)
+    }
 }

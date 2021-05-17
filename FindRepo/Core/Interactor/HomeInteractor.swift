@@ -37,18 +37,18 @@ extension HomeInteractor: HomeProvider {
     
     func searchRepos(query: String) -> AnyPublisher<[Repo], Error> {
         return self.remote.searchRepos(query: query)
-            .map { RepoMapper.mapRepoResponsesToEntities(input: $0) }
+            .map { Mapper.mapRepoResponsesToEntities(input: $0) }
             .eraseToAnyPublisher()
     }
     
     func getVisitedRepo() -> AnyPublisher<[Repo], Error> {
         return self.locale.getVisitedRepo()
-            .map { RepoMapper.mapRepoObjectsToEntities(input: $0) }
+            .map { Mapper.mapRepoObjectsToEntities(input: $0) }
             .eraseToAnyPublisher()
     }
     
     func addVisitedRepo(from repo: Repo) -> AnyPublisher<Bool, Error> {
-        let repoObject = RepoMapper.mapRepoObjectToEntity(input: repo)
+        let repoObject = Mapper.mapRepoObjectToEntity(input: repo)
         return self.locale.addVisitedRepo(from: repoObject).eraseToAnyPublisher()
     }
     

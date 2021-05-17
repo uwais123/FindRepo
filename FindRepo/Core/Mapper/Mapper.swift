@@ -1,5 +1,5 @@
 //
-//  RepoMapper.swift
+//  Mapper.swift
 //  FindRepo
 //
 //  Created by Uwais Alqadri on 15/05/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class RepoMapper {
+final class Mapper {
     
     // MARK: -- responses -> enitites (domain model)
     static func mapRepoResponsesToEntities(
@@ -45,32 +45,32 @@ final class RepoMapper {
             htmlUrl: ownerItem.htmlUrl ?? "Unknown"
         )
     }
-    
-    // MARK: -- response -> enitites (domain model)
-    static func mapOwnerObjectToEntity(
-        input ownerObject: OwnerObject
-    ) -> Owner {
-        return Owner(
-            id: ownerObject.id,
-            name: ownerObject.name ,
-            avatarUrl: ownerObject.avatarUrl ,
-            profileUrl: ownerObject.profileUrl ,
-            htmlUrl: ownerObject.htmlUrl
-        )
-    }
-    
-    // MARK: -- entity -> object (local)
-    static func mapOwnerEntityToObject(
-        input ownerEntity: Owner
-    ) -> OwnerObject {
-        let object = OwnerObject()
-        object.id = ownerEntity.id
-        object.name = ownerEntity.name
-        object.avatarUrl = ownerEntity.avatarUrl
-        object.profileUrl = ownerEntity.profileUrl
-        object.htmlUrl = ownerEntity.htmlUrl
-        return object
-    }
+//
+//    // MARK: -- response -> enitites (domain model)
+//    static func mapOwnerObjectToEntity(
+//        input ownerObject: OwnerObject
+//    ) -> Owner {
+//        return Owner(
+//            id: ownerObject.id,
+//            name: ownerObject.name ,
+//            avatarUrl: ownerObject.avatarUrl ,
+//            profileUrl: ownerObject.profileUrl ,
+//            htmlUrl: ownerObject.htmlUrl
+//        )
+//    }
+//
+//    // MARK: -- entity -> object (local)
+//    static func mapOwnerEntityToObject(
+//        input ownerEntity: Owner
+//    ) -> OwnerObject {
+//        let object = OwnerObject()
+//        object.id = ownerEntity.id
+//        object.name = ownerEntity.name
+//        object.avatarUrl = ownerEntity.avatarUrl
+//        object.profileUrl = ownerEntity.profileUrl
+//        object.htmlUrl = ownerEntity.htmlUrl
+//        return object
+//    }
     
     // MARK: -- responses -> enitites (domain model)
     static func mapOwnerResponsesToEntities(
@@ -100,7 +100,7 @@ final class RepoMapper {
         object.starGazersCount = repoEntity.starGazersCount
         object.forksCount = repoEntity.forksCount
         object.language = repoEntity.language
-        object.owner = mapOwnerEntityToObject(input: repoEntity.owner ?? Owner(id: 0, name: "", avatarUrl: "", profileUrl: "", htmlUrl: ""))
+        object.ownerName = repoEntity.owner!.name
         object.htmlUrl = repoEntity.htmlUrl
         object.detailUrl = repoEntity.detailUrl
         object.cloneUrl = repoEntity.cloneUrl
@@ -121,7 +121,7 @@ final class RepoMapper {
                 starGazersCount: result.starGazersCount,
                 forksCount: result.forksCount,
                 language: result.language,
-                owner: mapOwnerObjectToEntity(input: result.owner ?? OwnerObject()),
+                owner: nil,
                 htmlUrl: result.htmlUrl,
                 detailUrl: result.detailUrl,
                 cloneUrl: result.cloneUrl,

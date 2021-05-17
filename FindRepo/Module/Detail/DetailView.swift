@@ -9,23 +9,18 @@ import SwiftUI
 
 struct DetailView: View {
     
-    var htmlUrl: String
+    @ObservedObject var presenter: DetailPresenter
+    var repo: Repo
     
     var body: some View {
-        WebView(url: URL(string: htmlUrl))
+        WebView(url: URL(string: repo.htmlUrl))
             .edgesIgnoringSafeArea([.bottom, .horizontal])
             .navigationBarItems(
-                trailing: Text(htmlUrl)
+                trailing: Text(repo.htmlUrl)
                     .fontWeight(.medium)
             )
             .onAppear {
-                
+                presenter.addVisitedRepo(repo: repo)
             }
-    }
-}
-
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(htmlUrl: "https://github.com/apple/swift")
     }
 }

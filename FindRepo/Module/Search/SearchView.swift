@@ -20,12 +20,9 @@ struct SearchView: View {
                     .padding(.top, 15)
             } else {
                 ForEach(presenter.searchResults) { item in
-                    NavigationLink(destination: DetailView(htmlUrl: item.htmlUrl)) {
+                    presenter.linkToSearch(item: item) {
                         HomeRow(repo: item)
                     }.buttonStyle(PlainButtonStyle())
-                    .onAppear {
-                        presenter.addVisitedRepo(repo: item)
-                    }
                 }
             }
         }

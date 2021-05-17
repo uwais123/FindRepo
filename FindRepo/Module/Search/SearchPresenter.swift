@@ -11,6 +11,7 @@ import SwiftUI
 
 class SearchPresenter: ObservableObject {
     
+    private let router = SearchRouter()
     private let provider: HomeProvider
     private var cancellables: Set<AnyCancellable> = []
     
@@ -64,22 +65,6 @@ class SearchPresenter: ObservableObject {
             }).store(in: &cancellables)
     }
     
-    func addVisitedRepo(repo: Repo) {
-        provider.addVisitedRepo(from: repo)
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .failure:
-                    self.errorMessage = String(describing: completion)
-                    print(self.errorMessage)
-                case .finished:
-                    print(completion)
-                }
-            }, receiveValue: { isSaved in
-                print("isSaved \(isSaved)")
-            }).store(in: &cancellables)
-    }
-    
     func removeVisitedRepo(idRepo: String) {
         provider.removeVisitedRepo(from: idRepo)
             .receive(on: RunLoop.main)
@@ -94,5 +79,15 @@ class SearchPresenter: ObservableObject {
             }, receiveValue: { isSaved in
                 print(isSaved)
             }).store(in: &cancellables)
+    }
+    
+    
+    func linkToSearch<Content: View>(
+        item repo: Repo,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        NavigationLink(
+            destination: router.makeDetailView(repo: repo)
+        ) { content() }
     }
 }
